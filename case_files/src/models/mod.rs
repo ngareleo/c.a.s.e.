@@ -1,0 +1,13 @@
+pub mod animation_model;
+pub mod audio_model;
+pub mod chat_model;
+pub mod contact_model;
+pub mod document_model;
+pub mod file_model;
+pub mod message_model;
+pub mod photo_size_model;
+pub mod sticker_model;
+pub mod user_model;
+pub mod video_model;
+pub mod video_note_model;
+pub mod voice_model;
