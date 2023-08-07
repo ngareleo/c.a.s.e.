@@ -14,8 +14,8 @@ use super::{
 use serde::{ Deserialize, Serialize };
 use utility_types::omit;
 
-#[omit(ReplyToMessage, [reply_to_message, pinned_message], [Deserialize, Serialize])]
-#[derive(Deserialize, Serialize)]
+#[omit(ReplyToMessage, [reply_to_message, pinned_message], [Deserialize, Serialize, Debug])]
+#[derive(Deserialize, Serialize, Debug)]
 pub struct Message {
     message_id: i32,
     message_thread_id: Option<i32>,
