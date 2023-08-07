@@ -15,7 +15,7 @@ async fn main() {
     dotenv().ok();
 
     let tg_api_key = env::var("TG_API_KEY").unwrap_or_else(|_| {
-        println!("Add API_TOKEN to .env file");
+        println!("Add Telegram API key as TG_API_KEY to .env file");
         process::exit(-1);
     });
 

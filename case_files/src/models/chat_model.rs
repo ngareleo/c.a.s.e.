@@ -29,7 +29,7 @@ pub struct Chat {
 }
 
 #[derive(Debug, Deserialize, Serialize)]
-enum ChatType {
+pub enum ChatType {
     Private,
     Group,
     Supergroup,
