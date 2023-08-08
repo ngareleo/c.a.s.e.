@@ -3,6 +3,7 @@ use serde::{ Deserialize, Serialize };
 #[derive(Debug, Deserialize, Serialize)]
 pub struct Chat {
     id: i32,
+    #[serde(rename="type")]
     _type: ChatType,
     title: Option<String>,
     username: Option<String>,

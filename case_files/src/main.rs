@@ -35,7 +35,7 @@ async fn run(config: Config) -> Result<(), actix_web::Error> {
 
     HttpServer::new(move || {
         let logger = Logger::default();
-        App::new().wrap(logger).service(handlers::index_handler::index)
+        App::new().wrap(logger).service(handlers::index_handler::index).service(handlers::webhook_handler::handle_updates_webhook)
     })
         .bind(("127.0.0.1", config.port))?
         .run().await

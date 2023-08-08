@@ -16,7 +16,9 @@ pub struct Update {
     pre_checkout_query: Option<PreCheckoutQuery>,
     poll: Option<Poll>,
     poll_answer: Option<PollAnswer>,
+    #[serde(skip)]
     my_chat_member: Option<ChatMemberUpdated>,
+    #[serde(skip)]
     chat_member: Option<ChatMemberUpdated>,
     chat_join_request: Option<ChatJoinRequest>,
 }
@@ -37,6 +39,7 @@ struct Poll {
     total_voter_count: i32,
     is_closed: bool,
     is_anonymous: bool,
+    #[serde(rename="type")]
     _type: PollType,
     allows_multiple_answers: bool,
     correct_option_id: Option<i32>,
@@ -59,21 +62,21 @@ struct MessageEntity {
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all="snake_case")]
 enum MessageEntityType {
-    Mention(String),
-    Hashtag(String),
-    Cashtag(String),
-    BotCommand(String),
-    Url(String),
-    Email(String),
-    PhoneNumber(String),
-    Bold(String),
-    Italic(String),
-    Underline(String),
-    Strikethrough(String),
-    Code(String),
-    Pre(String),
-    TextLink(String),
-    TextMention(String),
+    Mention,
+    Hashtag,
+    Cashtag,
+    BotCommand,
+    Url,
+    Email,
+    PhoneNumber,
+    Bold,
+    Italic,
+    Underline,
+    Strikethrough,
+    Code,
+    Pre,
+    TextLink,
+    TextMention,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
@@ -117,7 +120,7 @@ struct OrderInfo {
 
 #[derive(Serialize, Deserialize, Debug)]
 struct ChatInviteLink {
-    inivte_link: String,
+    invite_link: String,
     creator: User,
     creates_join_request: bool,
     is_primary: bool,
