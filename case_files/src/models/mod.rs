@@ -11,3 +11,4 @@ pub mod user_model;
 pub mod video_model;
 pub mod video_note_model;
 pub mod voice_model;
+pub mod update_model;
